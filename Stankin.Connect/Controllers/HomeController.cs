@@ -20,17 +20,30 @@ namespace Stankin.Connect.Controllers
             
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             Class a = new Class();
-           
+            
             return View(a);
         }
 
+        public IActionResult Add(Class cl)
+        {
+            cl.id = 15;
+            return RedirectToAction("Privacy");
+        }
+        
         public IActionResult Privacy()
         {
+            
             return View();
+        }
+
+        public IActionResult Res(Class cl)
+        {
+            Console.WriteLine(cl.id2); ;
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -41,7 +54,7 @@ namespace Stankin.Connect.Controllers
 
         public IActionResult AddList()
         {
-            a.i = 15;
+            a.id = 15;
             return RedirectToAction("Index");
         }
     }

@@ -1,12 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@*@{
+        ViewData["Title"] = "Home Page";
+    }
+    @model Class
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        <p>@Model.i</p>
+
+        <a asp-action="AddList">Добавить список заготовок в бд</a>
+    </div>*@
+
 @model Class
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<form method="post" action="~/Home/Res">
+    <label>Высота:</label><br />
+    <p><input type="radio" name="id2" value="25" /> Нет</p>
+    <input type="submit" value="Отправить" />
 
-    <p>@Model.i</p>
-
-    <a asp-action="AddList">Добавить список заготовок в бд</a>
-</div>
+</form>
