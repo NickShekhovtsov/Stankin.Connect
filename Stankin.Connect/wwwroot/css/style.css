@@ -1,5 +1,5 @@
 /*Обнуление*/
-*{
+/*{
 	padding: 0;
 	margin: 0;
 	border: 0;
@@ -34,5 +34,44 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}*/
 /*--------------------*/
+
+.ChoiceTest{
+	max-width: 200px;
+	text-align: center;
+
+	margin: 0px auto;
+	margin-top: 300px; 
+	font-size: 20px;
+}
+.Test{
+	border: 1px solid #000;
+	line-height: 40px;
+	margin-top: 20px;
+	background: green;
+}
+.Test:hover{
+	width: 250px;
+	height: 90px;
+}
+.image{
+	height: 70px; 
+	width: 198px;
+}
+
+.image:hover{
+	width: 250px;
+	height: 90px;
+}
+
+.info{
+	border: 1px solid #000;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+}
+
+.info:hover{
+	font-size: 30px;
+}
