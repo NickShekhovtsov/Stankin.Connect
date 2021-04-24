@@ -12,18 +12,18 @@
     </div>*@
 
 @*model Class
-<form method="post" action="~/Home/Res">
-    <label>Высота:</label><br />
-    <p><input type="radio" name="id2" value="25" /> Нет</p>
-    <input type="submit" value="Отправить" />
+    <form method="post" action="~/Home/Res">
+        <label>Высота:</label><br />
+        <p><input type="radio" name="id2" value="25" /> Нет</p>
+        <input type="submit" value="Отправить" />
 
-</form>*@
-
-
+    </form>*@
 
 
 
-<!DOCTYPE html>
+
+
+<!--<!DOCTYPE html>
 
 <html lang="ru">
 
@@ -46,11 +46,11 @@
 
     </div>
 
-    <div class="block">
+    <div class="block">-->
         @*<button class="btn2" onclick="Click1();">Обеспечение комфортных условий</button>*@
-        <button  class="btn2" onclick="Click1()">Обеспечение комфортных условий</button>
+        <!--<button class="btn2" onclick="Click1()">Обеспечение комфортных условий</button>-->
         @*<button class= "btn2" asp-action="Test1">обеспечение</button>*@
-        <button class="btn2" onclick="Click2();">Оборудование территории для инвалидов</button>
+        <!--<button class="btn2" onclick="Click2();">Оборудование территории для инвалидов</button>
         <button class="btn2" onclick="Click3();">Обеспечение условий доступности для инвалидов</button>
     </div>
 
@@ -75,36 +75,107 @@
 
     <script type="text/javascript">
 
-			function Click1()
-            {
-                window.open('/Home/Test1', '_self');
-                
-			}
+        function Click1() {
+            window.open('/Home/Test1', '_self');
 
-			function Click2()
-			{
-				window.open('test2.html', '_blank');
-			}
+        }
 
-			function Click3()
-			{
-				window.open('test3.html', '_blank');
-			}
+        function Click2() {
+            window.open('test2.html', '_blank');
+        }
 
-			function ClickSupport()
-			{
-				window.open('support.html', '_blank');
-			}
+        function Click3() {
+            window.open('test3.html', '_blank');
+        }
 
-			function ClickInfo()
-			{
-				window.open('info.html', '_blank');
-			}
+        function ClickSupport() {
+            window.open('support.html', '_blank');
+        }
 
-			function ClickAdmin()
-			{
-				window.open('/Home/Admin', '_blank');
-			}
+        function ClickInfo() {
+            window.open('info.html', '_blank');
+        }
+
+        function ClickAdmin() {
+            window.open('/Home/Admin', '_blank');
+        }
+
+    </script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <title>Stankin.Connect</title>
+    <link rel="icon" href="/img/stankinLogo.png">
+
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body class="bg">
+    <form action="#" method="post" enctype="multipart/form-data"></form>
+
+
+
+    <div class="buttons">
+
+        <div class="stankinBlock">
+            <a href="https://stankin.ru/" target="_blank">
+                <img class="stankinImg" src="/img/stankin.png">
+            </a>
+
+        </div>
+
+        <br><br><br>
+
+        <button class="btn" onclick="Click1();">Обеспечение комфортных условий</button>
+        <button class="btn" onclick="Click2();">Оборудование территории для инвалидов</button>
+        <button class="btn" onclick="Click3();">Обеспечение условий доступности для инвалидов</button>
+
+
+        <br>
+        <button class="btn" onclick="ClickSupport();">Связаться с администрацией</button>
+        <button class="btn" onclick="ClickAdmin();">Войти</button>
+        <button class="btn" onclick="ClickInfo();">Информация</button>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div> <img src="/img/hack.png"></div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        function Click1() {
+            window.open('/Home/Test1', '_self');
+        }
+
+        function Click2() {
+            window.open('test2.html', '_self');
+        }
+
+        function Click3() {
+            window.open('test3.html', '_self');
+        }
+
+        function ClickSupport() {
+            window.open('/Home/Support', '_self');
+        }
+
+        function ClickInfo() {
+            window.open('/Home/Info', '_self');
+        }
+
+        function ClickAdmin() {
+            window.open('/Home/Admin', '_self');
+        }
 
     </script>
 </body>

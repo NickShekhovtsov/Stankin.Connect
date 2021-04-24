@@ -29,10 +29,10 @@ namespace Stankin.Connect.Controllers
             ClassArray.ReadFromFile();
             _logger = logger;
         }
-        
+
         public IActionResult Index()
         {
-            
+
             //ClassArray.WriteToFile();
             return View(a);
         }
@@ -46,10 +46,10 @@ namespace Stankin.Connect.Controllers
             GenerateExel();
             return View("Index");
         }
-        
+
         public IActionResult Privacy()
         {
-            
+
             return View();
         }
 
@@ -57,7 +57,15 @@ namespace Stankin.Connect.Controllers
         {
             return View();
         }
+        public IActionResult Support()
+        {
+            return View();
+        }
 
+        public IActionResult Info()
+        {
+            return View();
+        }
         public IActionResult Res(Class cl)
         {
             Console.WriteLine(cl.id2); ;
