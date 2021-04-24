@@ -37,8 +37,31 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}*/
 /*--------------------*/
 
+.btn{
+	text-decoration: none;
+	display: inline-block;
+	line-height: 30px;
+	padding: 0 30px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 18px;
+	border-radius: 10px;
+	top: 0;
+	position: relative;
+	color: #fff;
+	background-color: #5e5373;
+	box-shadow: 0 5px 0 #000;
+	transition-duration: 0.3s;
+}
+
+.btn:hover{
+	top: 2px;
+	box-shadow: 0 3px 0 #3c354a;
+	background-color: #18b5a4;
+}
+
 .ChoiceTest{
-	max-width: 200px;
+	max-width: 300px;
 	text-align: center;
 
 	margin: 0px auto;
@@ -65,6 +88,27 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}*/
 	height: 90px;
 }
 
+.admin{
+	border: 1px solid #000;
+	position: fixed;
+	right: 50px;
+	top: 50px;
+}
+
+.adminInput{
+	max-width: 200px;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
+.supportInput{
+	max-width: 900px;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
 .info{
 	border: 1px solid #000;
 	position: fixed;
@@ -72,6 +116,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}*/
 	bottom: 50px;
 }
 
-.info:hover{
-	font-size: 30px;
+.close{
+	position: fixed;
+	top: 30px;
+	right: 30px;
+}
+
+.closeIMG{
+	height: 35px;
+	width: 35px;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+.finalInfo{
+	font-weight: bold;
+	text-align: center;
 }
