@@ -11,55 +11,72 @@
 		<link rel="stylesheet" type="text/css" href="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\css\style.css">
 	</head>
 
-	<body>
+	<body class="bg">
 		<form action="#" method="post" enctype="multipart/form-data"></form>
 
-		<div>
-			1) Наличие комфортной зоны отдыха (ожидания), оборудованной соответствующей мебелью.
-			<p><input type="radio" name="radio1" value="" /> Да</p>
-			<p><input type="radio" name="radio1" value="" /> Нет</p>
+		<div class="main">
+			<div>
+				1) Наличие комфортной зоны отдыха (ожидания), оборудованной соответствующей мебелью. <br><br>
+				<input type="radio" name="radio1" value="" /> Да <br>
+				<input type="radio" name="radio1" value="" /> Нет <br><br><br>
+			</div>
+
+			<div>
+				2) Наличие и понятность навигации внутри организации. <br><br>
+				<input type="radio" name="radio2" value="" /> Да <br>
+				<input type="radio" name="radio2" value="" /> Нет <br><br><br>
+			</div>
+
+			<div>
+				3) Наличие и доступность питьевой воды. <br><br>
+				<input type="radio" name="radio3" value="" /> Да <br>
+				<input type="radio" name="radio3" value="" /> Нет <br><br><br>
+			</div>
+
+			<div>
+				4) Наличие и доступность санитарно-гигиенических помещений. <br><br>
+				<input type="radio" name="radio4" value="" /> Да <br>
+				<input type="radio" name="radio4" value="" /> Нет <br><br><br>
+			</div>
+
+			<div>
+				5) Санитарное состояние помещений организации. <br><br>
+				<input class="radioCSS" type="radio" name="radio5" value="" /> Да <br>
+				<input type="radio" name="radio5" value="" /> Нет <br><br><br>
+			</div>
+
+			<div>
+				6) Транспортная доступность (возможность доехать до организации на общественном транспорте, наличие парковки). <br><br>
+				<input type="radio" name="radio6" value="" /> Да <br>
+				<input type="radio" name="radio6" value="" /> Нет <br><br>
+			</div>
+
+			
+			<div>
+				<input class="mail" placeholder="E-mail (по желанию)" type="text" name="E-mail" value="" />
+			</div>
+
+			<div class="center">
+				<div>
+					<p><button class="btn" type="submit">Отправить</button></p>
+				</div>
+			</div>
 		</div>
 
-		<div>
-			2) Наличие и понятность навигации внутри организации.
-			<p><input type="radio" name="radio2" value="" /> Да</p>
-			<p><input type="radio" name="radio2" value="" /> Нет</p>
+		<div class="close"><button class="btn2" onclick="Back();">Назад</button></div>
+
+		<div class="stankinBlock">
+			<a href="https://stankin.ru/" target="_blank"><img class="stankinImg" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\stankin.png"></a>
 		</div>
 
-		<div>
-			3) Наличие и доступность питьевой воды.
-			<p><input type="radio" name="radio3" value="" /> Да</p>
-			<p><input type="radio" name="radio3" value="" /> Нет</p>
-		</div>
+		<script type="text/javascript">
+			
+			function Back()
+			{
+				window.close();
+			}
 
-		<div>
-			4) Наличие и доступность санитарно-гигиенических помещений.
-			<p><input type="radio" name="radio4" value="" /> Да</p>
-			<p><input type="radio" name="radio4" value="" /> Нет</p>
-		</div>
-
-		<div>
-			5) Санитарное состояние помещений организации.
-			<p><input type="radio" name="radio5" value="" /> Да</p>
-			<p><input type="radio" name="radio5" value="" /> Нет</p>
-		</div>
-
-		<div>
-			6) Транспортная доступность (возможность доехать до организации на общественном транспорте, наличие парковки).
-			<p><input type="radio" name="radio6" value="" /> Да</p>
-			<p><input type="radio" name="radio6" value="" /> Нет</p>
-		</div>
-
-		<div>
-			<input placeholder="E-mail (по желанию)" type="text" name="E-mail" value="" />
-		</div>
-
-		<div>
-			<p><button type="submit">Отправить</button></p>
-		</div>
-
-		<div class="close"><img class="closeIMG" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\close.png" alt="close" 
-		onclick="window.close();" /></div>
+		</script>
 		
 
 	</body>

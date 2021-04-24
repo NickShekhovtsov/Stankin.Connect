@@ -11,25 +11,35 @@
 		<link rel="stylesheet" type="text/css" href="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\css\style.css">
 	</head>
 
-	<body>
+	<body class="bg">
 		<form action="#" method="post" enctype="multipart/form-data"></form>
 
 		<div class="supportInput">
 			<div class="bold">Если у вас возникла проблема, с которой вы хотите поделиться, напишите нам!</div>
 		
-			<p><textarea name="text"></textarea></p>
+			<p><textarea class="textArea" name="text" cols="100" rows="16"></textarea></p>
 
 			<div class="bold">Электронная почта для обратной связи:</div> <br>
-			<input placeholder="E-mail" type="text" name="mail" value="" /> 
+			<input class="mail" placeholder="E-mail" type="text" name="mail" value="" /> 
 
-			<p><button type="submit">Отправить</button></p>
+			<p><button class="btn2" type="submit">Отправить</button></p>
 
-			<div class="close"><img class="closeIMG" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\close.png" alt="close" 
-			onclick="window.close();" /></div>
+			<div class="close"><button class="btn2" onclick="Back();">Назад</button></div>
 
 		</div>
 
-		
+		<div class="stankinBlock">
+			<a href="https://stankin.ru/" target="_blank"><img class="stankinImg" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\stankin.png"></a>
+		</div>
+
+		<script type="text/javascript">
+			
+			function Back()
+			{
+				window.close();
+			}
+
+		</script>
 
 	</body>
 </html>

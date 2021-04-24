@@ -11,21 +11,24 @@
 		<link rel="stylesheet" type="text/css" href="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\css\style.css">
 	</head>
 
-	<body>
+	<body class="bg">
 		<form action="#" method="post" enctype="multipart/form-data"></form>
 
 		<div class="ChoiceTest">
-			<div class="Test"><a href="test1.html" target="_blank">ТЕСТ 1</a></div>
-			<a href="test2.html" target="_blank"><div class="Test">Оборудование территории для инвалидов</div></a>
-			<div class="Test"><a href="test3.html" target="_blank">Доступность для инвалидов</a></div>
-			<div class="Test"><a href="support.html" target="_blank">Отправить сообщение</a></div>
+			<button class="btn" onclick="Click1();" >Обеспечение комфортных условий</button>
+			<button class="btn" onclick="Click2();" >Оборудование территории для инвалидов</button>
+			<button class="btn" onclick="Click3();" >Обеспечение условий доступности для инвалидов</button>
 
-			<button class="btn" onclick="Click1();" >Тeстовая кнопка</button>
+			<p><button class="btn2" onclick="ClickSupport();">Связаться с администрацией</button></p>
 		</div>
 
-		<div class="admin"><a href="admin.html" target="_blank"> ADMIN </a></div>
+		<div class="admin"><button class="btn4" onclick="ClickAdmin();">войти</button></div>
 
-		<div class="info"><a href="info.html" target="_blank"> INFO </a></div>
+		<div class="info"><button class="btn3" onclick="ClickInfo();">i</button></div>
+
+		<div class="stankinBlock">
+			<a href="https://stankin.ru/" target="_blank"><img class="stankinImg" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\stankin.png"></a>
+		</div>
 
 
 		<script type="text/javascript">
@@ -48,6 +51,16 @@
 			function ClickSupport()
 			{
 				window.open('support.html', '_blank');
+			}
+
+			function ClickInfo()
+			{
+				window.open('info.html', '_blank');
+			}
+
+			function ClickAdmin()
+			{
+				window.open('admin.html', '_blank');
 			}
 
 		</script>>

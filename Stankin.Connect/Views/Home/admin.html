@@ -11,20 +11,30 @@
 		<link rel="stylesheet" type="text/css" href="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\css\style.css">
 	</head>
 
-	<body>
+	<body class="bg">
 		<form action="#" method="post" enctype="multipart/form-data"></form>
 
 		<div class="adminInput">
+				<p><input class="input" placeholder="login" type="text" name="log" value="" /></p>
+				<p><input class="input" placeholder="password" type="password" name="pas" value="" /></p>
 
-				<p class="bold">Hello admin!</p>
-				<p><input placeholder="login" type="text" name="log" value="" /></p>
-				<p><input placeholder="password" type="password" name="pas" value="" /></p>
-
-				<button type="submit">Войти</button>
+				<button class="btn">Войти</button>
 		</div>
 
-		<div class="close"><img class="closeIMG" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\close.png" alt="close" 
-		onclick="window.close();" /></div>
+		<div class="close"><button class="btn2" onclick="Back();">Назад</button></div>
+
+		<div class="stankinBlock">
+			<a href="https://stankin.ru/" target="_blank"><img class="stankinImg" src="D:\Репозитории\HackInHome2021\Stankin.Connect\Stankin.Connect\wwwroot\img\stankin.png"></a>
+		</div>
+
+		<script type="text/javascript">
+			
+			function Back()
+			{
+				window.close();
+			}
+
+		</script>
 
 	</body>
 </html>
