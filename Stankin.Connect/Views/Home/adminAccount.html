@@ -3,7 +3,7 @@
 <html lang="ru">
 
 	<head>
-		<title>admin</title>
+		<title>account</title>
 		<link rel="icon" href="/img/stankinLogo.png">
 
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
@@ -16,11 +16,10 @@
 		<form action="#" method="post" enctype="multipart/form-data"></form>
 
 		<div class="adminInput"> <br> <br> <br> <br> <br> <br>
-				<input class="input" placeholder="login" type="text" name="log" value="" /> <br> <br>
-				<input class="input" placeholder="password" type="password" name="pas" value="" /> <br>
 
-				<button class="btn" onclick="Back();">Назад</button>
-				<button class="btn" onclick="Account();">Войти</button>
+				<button class="btn" onclick="Back();">Выйти из режима администрации</button>
+				<button class="btn">Скачать таблицу Exel</button> <br>
+				<button class="btn" onclick="Message();">Сообщения</button>
 
 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				<div> <img src="/img/hack.png"></div> 	
@@ -33,9 +32,9 @@
 				window.open('index.html', '_self');
 			}
 
-			function Account()
+			function Message()
 			{
-				window.open('adminAccount.html', '_self');
+				window.open('message.html', '_self');
 			}
 
 		</script>
