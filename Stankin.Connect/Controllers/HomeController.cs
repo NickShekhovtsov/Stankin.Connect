@@ -32,9 +32,8 @@ namespace Stankin.Connect.Controllers
         
         public IActionResult Index()
         {
-            Class a = new Class();
-            ClassArray.WriteToFile();
-            ClassArray.ReadFromFile();
+            
+            //ClassArray.WriteToFile();
             return View(a);
         }
 
@@ -45,12 +44,17 @@ namespace Stankin.Connect.Controllers
             ClassArray.classes.Add(cl);
             ClassArray.WriteToFile();
             GenerateExel();
-            return RedirectToAction("Privacy");
+            return View("Index");
         }
         
         public IActionResult Privacy()
         {
             
+            return View();
+        }
+
+        public IActionResult Test1()
+        {
             return View();
         }
 
@@ -169,6 +173,11 @@ namespace Stankin.Connect.Controllers
             return File(mas, file_type, file_name);
 
           
+        }
+
+        public IActionResult Admin()
+        {
+            return View();
         }
     }
 
