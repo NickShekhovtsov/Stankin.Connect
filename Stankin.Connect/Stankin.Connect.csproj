@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
+    <PackageReference Include="System.Text.Json" Version="5.0.2" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Stankin.Connect.Controllers
 {
@@ -16,21 +17,25 @@ namespace Stankin.Connect.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-            
-            
+
+            ClassArray.ReadFromFile();
             _logger = logger;
         }
         
         public IActionResult Index()
         {
             Class a = new Class();
-            
+            ClassArray.WriteToFile();
+            ClassArray.ReadFromFile();
             return View(a);
         }
 
         public IActionResult Add(Class cl)
         {
-            cl.id = 15;
+            //cl.id = 15;
+            // string js=JsonSerializer.Serialize(cl);
+            ClassArray.classes.Add(cl);
+            ClassArray.WriteToFile();
             return RedirectToAction("Privacy");
         }
         
