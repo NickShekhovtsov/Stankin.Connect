@@ -73,26 +73,7 @@ namespace Stankin.Connect.Controllers
         }
         public void GenerateExel()
         {
-            //Generator generator = new Generator();
-            //var reportExcel = generator.Generate();
-            //FileStream fs = new FileStream("Report.xlsx", FileMode.OpenOrCreate);
-            //fs.Write(reportExcel);
-            ////WriteAllBytes("Report.xlsx", reportExcel);
-
-            //var file = new FileStream("myWorkbook.xlsx", FileMode.OpenOrCreate);
-            //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            //using (var package = new ExcelPackage(file))
-            //{
-            //    
-
-
-            //    // Save to file
-            //    package.Save();
-
-            //}
-
-            //File.WriteAllBytes("myWorkboox.xlsx", reportExcel);
+            
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             var file = new FileInfo("myWorkbook1.xlsx");
             using (var package = new ExcelPackage(file))
@@ -174,7 +155,7 @@ namespace Stankin.Connect.Controllers
                 // Save to file
                 package.Save();
             }
-            //GetFile();
+            
         }
 
         public FileResult GetFile()
@@ -182,26 +163,12 @@ namespace Stankin.Connect.Controllers
             string path = "myWorkbook1.xlsx";
             byte[] mas = System.IO.File.ReadAllBytes(path);
             string file_type = "application/xlsx";
-            string file_name = "123.xlsx";
+            string file_name = "Report.xlsx";
 
             return File(mas, file_type, file_name);
 
-            //var data = System.IO.File.ReadAllBytes("myWorkbook1.xlsx");
-            //var result = new FileContentResult(data, "application/xlsx");
-            //return result;
-
-
-
-
+          
         }
     }
-public class Generator
-{
-    public byte[] Generate()
-    {
 
-        var package = new ExcelPackage();
-        return package.GetAsByteArray();
-    }
-}
 }
