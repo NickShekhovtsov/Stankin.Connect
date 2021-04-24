@@ -214,3 +214,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .stankinImg{
 	height: 130px;
 }
+
+.message{
+	margin-top: 40px;
+}
+
+.blockMessage{
+	border: 1px solid #A40004;
+	height: 100%;
+	width: 100%;
+	text-align: left;
+	font-size: 18px;
+	color: #A40004;
+	margin-top: 15px;
+}
+
+.blockMessage:hover{
+	color: #fff;
+	background-color: #A40004;
+}
+
+.space{
+	padding-left: 30px;
+}
