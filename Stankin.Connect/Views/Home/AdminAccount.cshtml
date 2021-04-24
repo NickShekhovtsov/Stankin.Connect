@@ -1,7 +1,13 @@
 ﻿@model List<ContactToAdmin> 
 
 @foreach (var report in Model)
-{<br />
-    @report.mail    <br />@report.text
-<br />
+{ 
+
+ <div class="blockMessage">
+     <span class="space">@report.mail</span>
+     <span class="space">@report.text</span>
+ </div>
+      
 }
+
+
