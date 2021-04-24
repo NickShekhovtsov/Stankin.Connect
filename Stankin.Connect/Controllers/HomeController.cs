@@ -72,6 +72,12 @@ namespace Stankin.Connect.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult AdminAccount()
+        {
+            ContactToAdminArray.ReadFromJson();
+            return View(ContactToAdminArray.contactToAdmins);
+        }
+
         public IActionResult Info()
         {
             return View();
