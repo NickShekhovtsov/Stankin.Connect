@@ -1,0 +1,225 @@
+/*Обнуление*/
+{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+.block{
+	margin: 170px 0 0 0;
+	height: 90px;
+	min-width: 1000px;
+	background-color: #A40004;
+}
+
+.main{
+	padding-left: 80px;
+	padding-top: 20px;
+	height: 120%;
+	max-width: 1000px;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.center{
+	padding-bottom: 15px;
+	max-width: 300px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.btn{
+	text-decoration: none;
+	display: inline-block;
+	line-height: 30px;
+	padding: 0 15px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #A40004;
+	top: 0;
+	position: relative;
+	color: #A40004;
+	background-color: #fff;
+	transition-duration: 0.3s;
+}
+
+.btn:hover{
+	color: #fff;
+	background-color: #A40004;
+}
+
+.btn2{
+	font-size: 30px;
+	color: #fff;
+	letter-spacing: 
+	text-transform: uppercase;
+	background-color: #A40004;
+	border: 0px solid #000;
+	padding: 30px 0 22px 0;
+	padding-left: 20px;
+}
+
+.news{
+	height: 390px;
+	margin: 0px auto;
+	text-align: center;
+	background: url('../../wwwroot/img/news.png') no-repeat;
+	background-size: cover;
+}
+
+.copyrait{
+	border: 1px solid #000;
+	margin: 0px auto;
+	height: 100px;
+	background-color: #000;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	margin-top: 400px;
+}
+
+
+.Test{
+	border: 1px solid #000;
+	line-height: 40px;
+	margin-top: 20px;
+	background: green;
+}
+.Test:hover{
+	width: 250px;
+	height: 90px;
+}
+.image{
+	height: 70px; 
+	width: 198px;
+}
+
+.image:hover{
+	width: 250px;
+	height: 90px;
+}
+
+
+.adminInput{
+	max-width: 400px;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 300px;
+}
+
+.supportInput{
+	padding-top: 20px;
+	border: 1px solid #000;
+	height: 950px;
+	max-width: 900px;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.buttons{
+	max-width: 700px;
+	margin: 0px auto;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.closeIMG{
+	height: 25px;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+.finalInfo{
+	font-weight: bold;
+	text-align: center;
+}
+
+.input{
+	width: 270px;
+	height: 20px;
+	border-radius: 2px;
+	border: none;
+	border: 1px solid #007F16;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.input:focus{
+	border: 2px solid #007F16;
+	background-color: #65E17B;
+}
+
+.input:hover{
+	background-color: #65E17B;
+}
+
+.mail{
+	width: 220px;
+	height: 20px;
+	border-radius: 2px;
+	border: none;
+	border: 1px solid #007F16;
+}
+
+.mail:focus{
+	border: 2px solid #007F16;
+	background-color: #65E17B;
+}
+
+.mail:hover{
+	background-color: #65E17B;
+}
+
+.stankinBlock{
+	max-width: 700px;
+	position: absolute;
+	top: 20px;
+	left: 130px;
+}
+
+.stankinImg{
+	height: 130px;
+}
