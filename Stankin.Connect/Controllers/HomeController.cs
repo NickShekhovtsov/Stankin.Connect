@@ -7,6 +7,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Xml;
+//using OfficeOpenXml;
+using System.IO;
+using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using Microsoft.AspNetCore.Hosting;
+//using Grpc.Core;
+//using System.Web.Mvc;
 
 namespace Stankin.Connect.Controllers
 {
@@ -36,6 +44,7 @@ namespace Stankin.Connect.Controllers
             // string js=JsonSerializer.Serialize(cl);
             ClassArray.classes.Add(cl);
             ClassArray.WriteToFile();
+            GenerateExel();
             return RedirectToAction("Privacy");
         }
         
@@ -62,5 +71,137 @@ namespace Stankin.Connect.Controllers
             a.id = 15;
             return RedirectToAction("Index");
         }
+        public void GenerateExel()
+        {
+            //Generator generator = new Generator();
+            //var reportExcel = generator.Generate();
+            //FileStream fs = new FileStream("Report.xlsx", FileMode.OpenOrCreate);
+            //fs.Write(reportExcel);
+            ////WriteAllBytes("Report.xlsx", reportExcel);
+
+            //var file = new FileStream("myWorkbook.xlsx", FileMode.OpenOrCreate);
+            //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            //using (var package = new ExcelPackage(file))
+            //{
+            //    
+
+
+            //    // Save to file
+            //    package.Save();
+
+            //}
+
+            //File.WriteAllBytes("myWorkboox.xlsx", reportExcel);
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var file = new FileInfo("myWorkbook1.xlsx");
+            using (var package = new ExcelPackage(file))
+            {
+                if (package.Workbook.Worksheets.Count() == 0)
+                {
+                    var sheet = package.Workbook.Worksheets.Add("My Sheet");
+                    sheet.Cells["A1"].Value = "Hello World123!";
+                }
+                else
+                {
+                   
+                    var sheet = package.Workbook.Worksheets[0];
+
+                    sheet.Column(1).Width = 30;
+                    for (int i = 1; i < ClassArray.classes.Count()+1; i++)
+                    {
+                        sheet.Cells[i+1, 1].Value = "Респондент" + i;
+                    }
+
+                    for (int i = 1; i <7; i++)
+                    {
+                        sheet.Cells[1, i+1].Value = "В"+i;
+                    }
+
+                    for (int i=0;i<ClassArray.classes.Count();i++)
+                    {
+
+                        
+                            if (ClassArray.classes[i].radio1 == 0)
+                                sheet.Cells[i + 2,2].Value = "Нет";
+                            else
+                            {
+                                sheet.Cells[i + 2,2].Value = "Да";
+                            }
+
+                        if (ClassArray.classes[i].radio2 == 0)
+                            sheet.Cells[i + 2, 3].Value = "Нет";
+                        else
+                        {
+                            sheet.Cells[i + 2, 3].Value = "Да";
+                        }
+
+                        if (ClassArray.classes[i].radio3 == 0)
+                            sheet.Cells[i + 2, 4].Value= "Нет";
+                        else
+                        {
+                            sheet.Cells[i + 2, 4].Value = "Да";
+                        }
+
+                        if (ClassArray.classes[i].radio4 == 0)
+                            sheet.Cells[i + 2, 5].Value = "Нет";
+                        else
+                        {
+                            sheet.Cells[i + 2, 5].Value = "Да";
+                        }
+
+                        if (ClassArray.classes[i].radio5 == 0)
+                            sheet.Cells[i + 2, 6].Value = "Нет";
+                        else
+                        {
+                            sheet.Cells[i + 2, 6].Value = "Да";
+                        }
+
+                        if (ClassArray.classes[i].radio6 == 0)
+                            sheet.Cells[i + 2, 7].Value = "Нет";
+                        else
+                        {
+                            sheet.Cells[i + 2, 7].Value = "Да";
+                        }
+
+
+                    }
+                    
+                }
+                ////var sheet = package.Workbook.Worksheets.Add("My Sheet");
+                ////sheet.Cells["A1"].Value = "Hello World!";
+
+                // Save to file
+                package.Save();
+            }
+            //GetFile();
+        }
+
+        public FileResult GetFile()
+        {
+            string path = "myWorkbook1.xlsx";
+            byte[] mas = System.IO.File.ReadAllBytes(path);
+            string file_type = "application/xlsx";
+            string file_name = "123.xlsx";
+
+            return File(mas, file_type, file_name);
+
+            //var data = System.IO.File.ReadAllBytes("myWorkbook1.xlsx");
+            //var result = new FileContentResult(data, "application/xlsx");
+            //return result;
+
+
+
+
+        }
     }
+public class Generator
+{
+    public byte[] Generate()
+    {
+
+        var package = new ExcelPackage();
+        return package.GetAsByteArray();
+    }
+}
 }
