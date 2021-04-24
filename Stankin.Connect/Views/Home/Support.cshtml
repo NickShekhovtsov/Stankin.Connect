@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model ContactToAdmin 
+<!DOCTYPE html>
 
 <html lang="ru">
 
@@ -12,25 +13,25 @@
 </head>
 
 <body class="bg">
-    <form action="#" method="post" enctype="multipart/form-data"></form>
+    <form action="~/Home/Sup" method="post" enctype="multipart/form-data">
 
-    <div class="supportInput">
-        <div class="bold">Если у вас возникла проблема, с которой вы хотите поделиться, напишите нам!</div>
+        <div class="supportInput">
+            <div class="bold">Если у вас возникла проблема, с которой вы хотите поделиться, напишите нам!</div>
 
-        <p><textarea class="textArea" name="text" cols="100" rows="16"></textarea></p>
+            <p><textarea class="textArea" name="text" cols="100" rows="16"></textarea></p>
 
-        <div class="bold">Электронная почта для обратной связи:</div> <br>
-        <input class="mail" placeholder="E-mail" type="text" name="mail" value="" />
+            <div class="bold">Электронная почта для обратной связи:</div> <br>
+            <input class="mail" placeholder="E-mail" type="text" name="mail" value="" />
 
-        <br><br>
-        <button class="btn" onclick="Back();">Назад</button>
-        <button class="btn" type="submit">Отправить</button>
+            <br><br>
+            <button class="btn" onclick="Back();">Назад</button>
+            <button class="btn" type="submit">Отправить</button>
 
-        <br><br><br><br><br><br>
-        <img class="stankinImg" src="/img/stankin.png">
+            <br><br><br><br><br><br>
+            <img class="stankinImg" src="/img/stankin.png">
 
-    </div>
-
+        </div>
+    </form>
     <script type="text/javascript">
 
 			function Back()

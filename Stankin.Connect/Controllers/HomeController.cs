@@ -59,7 +59,17 @@ namespace Stankin.Connect.Controllers
         }
         public IActionResult Support()
         {
+            
+
             return View();
+        }
+
+        public IActionResult Sup(ContactToAdmin contactToAdmin)
+        {
+            ContactToAdminArray.ReadFromJson();
+            ContactToAdminArray.contactToAdmins.Add(contactToAdmin);
+            ContactToAdminArray.WriteToJson();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Info()

@@ -29,11 +29,8 @@ namespace Stankin.Connect.Models
         }
         static ClassArray()
         {
-            //string inputjson="";
-            //classes = JsonSerializer.Deserialize<List<Class>>(inputjson);
-            classes.Add(new Class { id = 15, id2 = 16 });
-            classes.Add(new Class { id = 17, id2 = 18 });
-            classes.Add(new Class { id = 19, id2 = 20 });
+            
+            
         }
     }
 }
