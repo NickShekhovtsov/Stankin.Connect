@@ -46,6 +46,11 @@ namespace Stankin.Connect.Controllers
         {
             return View();
         }
+
+        public IActionResult Test3()
+        {
+            return View();
+        }
         public IActionResult Support()
         {
 
@@ -199,6 +204,12 @@ namespace Stankin.Connect.Controllers
             return View("Index");
         }
 
+        public IActionResult Test3Add(Test3 t3)
+        {
+            Test3List.test3ar.Add(t3);
+            Test3List.WriteToFile();
+            return View("Index");
+        }
         public IActionResult Test2()
         {
             return View();
