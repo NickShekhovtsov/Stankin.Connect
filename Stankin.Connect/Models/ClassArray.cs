@@ -13,9 +13,13 @@ namespace Stankin.Connect.Models
         //public static ClassArray cl { get; set; } = new ClassArray();
         public static void ReadFromFile()
         {
-            string inputjson=File.ReadAllText("user.json");
-            classes = JsonSerializer.Deserialize<List<Class>>(inputjson);
-           
+            try
+            {
+                string inputjson = File.ReadAllText("user.json");
+                classes = JsonSerializer.Deserialize<List<Class>>(inputjson);
+            }
+            catch(Exception e)
+            { };
         }
 
         public static void WriteToFile()
@@ -27,10 +31,6 @@ namespace Stankin.Connect.Models
                 Console.WriteLine("Data has been saved to file");
             }
         }
-        static ClassArray()
-        {
-            
-            
-        }
+        
     }
 }

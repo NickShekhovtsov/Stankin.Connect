@@ -1,0 +1,72 @@
+﻿
+@model Test2
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <title>test2</title>
+    <link rel="icon" href="/img/stankinLogo.png">
+
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body class="bg">
+    <form action="~/Home/Test2Add" method="post" enctype="multipart/form-data">
+
+        <div class="main">
+            <div>
+                1) Оборудование входных групп пандусами (подъемными платформами).<br><br>
+                <input type="radio" name="radio1" value="1" /> Да <br>
+                <input type="radio" name="radio1" value="0" /> Нет <br><br><br>
+
+                <div>
+
+                    2) Наличие выделенных стоянок для автотранспортных средств инвалидов. <br><br>
+                    <input type="radio" name="radio2" value="1" /> Да <br>
+                    <input type="radio" name="radio2" value="0" /> Нет <br><br><br>
+
+                    <div>
+                        3) Наличие адаптированных лифтов, поручней, расширенных дверных проемов. <br><br>
+                        <input type="radio" name="radio3" value="1" /> Да <br>
+                        <input type="radio" name="radio3" value="0" /> Нет <br><br><br>
+                    </div>
+
+                    <div>
+                        4) Наличие сменных кресел-колясок. <br><br>
+                        <input type="radio" name="radio4" value="1" /> Да <br>
+                        <input type="radio" name="radio4" value="0" /> Нет <br><br><br>
+                    </div>
+
+                    <div>
+                        5) Наличие специально оборудованных санитарно-гигиенических помещений в организации. <br><br>
+                        <input type="radio" name="radio5" value="1" /> Да <br>
+                        <input type="radio" name="radio5" value="0" /> Нет <br><br>
+                    </div>
+
+                    <div>
+                        <input class="mail" placeholder="E-mail (по желанию)" type="text" name="mail" value="" />
+                    </div>
+
+
+                    <div class="center">
+                        <div>
+                            <button class="btn" onclick="Back();">Назад</button>
+                            <button class="btn" type="submit">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+    </form>
+    <script type="text/javascript">
+
+        function Back() {
+            window.open('/Home/Index', '_self');
+        }
+
+    </script>
+
+</body>
+</html>
