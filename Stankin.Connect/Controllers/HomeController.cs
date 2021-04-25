@@ -11,38 +11,28 @@ namespace Stankin.Connect.Controllers
 {
     public class HomeController : Controller
     {
-        Class a = new Class();
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
 
-            ClassArray.ReadFromFile();
+            Test1List.ReadFromFile();
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-
-            //ClassArray.WriteToFile();
-            return View(a);
+            return View();
         }
 
-        public IActionResult Add(Class cl)
-        {
-            
-            ClassArray.classes.Add(cl);
-            ClassArray.WriteToFile();
-            GenerateExel();
-            return View("Index");
-        }
 
-        public IActionResult Privacy()
+        public IActionResult Test1()
         {
             return View();
         }
 
-        public IActionResult Test1()
+        public IActionResult Test2()
         {
             return View();
         }
@@ -53,8 +43,21 @@ namespace Stankin.Connect.Controllers
         }
         public IActionResult Support()
         {
+            return View();
+        }
 
+        public IActionResult Authorization()
+        {
+            return View();
+        }
 
+        public IActionResult AdminPanel()
+        {
+            return View();
+        }
+
+        public IActionResult Info()
+        {
             return View();
         }
 
@@ -72,27 +75,14 @@ namespace Stankin.Connect.Controllers
             return View(ContactToAdminArray.contactToAdmins);
         }
 
-        public IActionResult Info()
-        {
-            return View();
-        }
-        public IActionResult Res(Class cl)
-        {
-            //Console.WriteLine(cl.id2); ;
-            return RedirectToAction("Index");
-        }
-
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult AddList()
-        {
-
-            return RedirectToAction("Index");
-        }
+        
         public void GenerateExel()
         {
 
@@ -115,7 +105,7 @@ namespace Stankin.Connect.Controllers
                 }
                 sheet.Column(1).Width = 30;
                 sheet.Column(8).Width = 40;
-                for (int i = 1; i < ClassArray.classes.Count() + 1; i++)
+                for (int i = 1; i < Test1List.test1ar.Count() + 1; i++)
                 {
                     sheet.Cells[i + 1, 1].Value = "Респондент" + i;
                 }
@@ -125,63 +115,60 @@ namespace Stankin.Connect.Controllers
                     sheet.Cells[1, i + 1].Value = "В" + i;
                 }
 
-                for (int i = 0; i < ClassArray.classes.Count(); i++)
+                for (int i = 0; i < Test1List.test1ar.Count(); i++)
                 {
 
 
-                    if (ClassArray.classes[i].radio1 == 0)
+                    if (Test1List.test1ar[i].radio1 == 0)
                         sheet.Cells[i + 2, 2].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 2].Value = "Да";
                     }
 
-                    if (ClassArray.classes[i].radio2 == 0)
+                    if (Test1List.test1ar[i].radio2 == 0)
                         sheet.Cells[i + 2, 3].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 3].Value = "Да";
                     }
 
-                    if (ClassArray.classes[i].radio3 == 0)
+                    if (Test1List.test1ar[i].radio3 == 0)
                         sheet.Cells[i + 2, 4].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 4].Value = "Да";
                     }
 
-                    if (ClassArray.classes[i].radio4 == 0)
+                    if (Test1List.test1ar[i].radio4 == 0)
                         sheet.Cells[i + 2, 5].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 5].Value = "Да";
                     }
 
-                    if (ClassArray.classes[i].radio5 == 0)
+                    if (Test1List.test1ar[i].radio5 == 0)
                         sheet.Cells[i + 2, 6].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 6].Value = "Да";
                     }
 
-                    if (ClassArray.classes[i].radio6 == 0)
+                    if (Test1List.test1ar[i].radio6 == 0)
                         sheet.Cells[i + 2, 7].Value = "Нет";
                     else
                     {
                         sheet.Cells[i + 2, 7].Value = "Да";
                     }
 
-                    sheet.Cells[i + 2, 8].Value = ClassArray.classes[i].mail;
+                    sheet.Cells[i + 2, 8].Value = Test1List.test1ar[i].mail;
                     sheet.Cells[1, 8].Value = "Электронная почта";
 
 
                 }
                 sheet.Cells["A1"].Value = "";
 
-                ////var sheet = package.Workbook.Worksheets.Add("My Sheet");
-                ////sheet.Cells["A1"].Value = "Hello World!";
-
-                // Save to file
+                
                 package.Save();
             }
 
@@ -196,7 +183,14 @@ namespace Stankin.Connect.Controllers
             else return View("Authorization");
 
         }
+        public IActionResult Test1Add(Test1 t1)
+        {
 
+            Test1List.test1ar.Add(t1);
+            Test1List.WriteToFile();
+            GenerateExel();
+            return View("Index");
+        }
         public IActionResult Test2Add(Test2 t2)
         {
             Test2List.test2ar.Add(t2);
@@ -210,11 +204,8 @@ namespace Stankin.Connect.Controllers
             Test3List.WriteToFile();
             return View("Index");
         }
-        public IActionResult Test2()
-        {
-            return View();
-        }
-        public FileResult GetFile()
+        
+        public FileResult GetExcelFile()
         {
             string path = "myWorkbook1.xlsx";
             byte[] mas = System.IO.File.ReadAllBytes(path);
@@ -226,15 +217,7 @@ namespace Stankin.Connect.Controllers
           
         }
 
-        public IActionResult Authorization()
-        {
-            return View();
-        }
-
-        public IActionResult AdminPanel()
-        {
-            return View();
-        }
+        
     }
 
 }

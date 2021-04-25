@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Stankin.Connect.Models
 {
-    public class Class
+    public class Test1
     {
        //public int id { get; set; } = 20;
         public int radio1 { get; set; } = 0;
