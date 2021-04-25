@@ -61,11 +61,14 @@ namespace Stankin.Connect.Controllers
             return View();
         }
 
-        public IActionResult Sup(ContactToAdmin contactToAdmin)
+        public IActionResult AddMessageToAdmin(ContactToAdmin contactToAdmin)
         {
             ContactToAdminArray.ReadFromJson();
-            ContactToAdminArray.contactToAdmins.Add(contactToAdmin);
-            ContactToAdminArray.WriteToJson();
+            if (contactToAdmin.mail != null && contactToAdmin.text != null)
+            {
+                ContactToAdminArray.contactToAdmins.Add(contactToAdmin);
+                ContactToAdminArray.WriteToJson();
+            }
             return RedirectToAction("Index");
         }
 
@@ -82,16 +85,24 @@ namespace Stankin.Connect.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
-        
+
+
 
         [HttpPost]
         public IActionResult CheckAuthorization(Account acc)
         {
             if (acc.login == "admin" && acc.password == "0000")
                 return RedirectToAction("AdminPanel");
-            else return View("Authorization");
+            else
+            {
+                if (acc.login == "Oleg" && acc.password == "Nick")
+                    return RedirectToAction("AdminPanel");
 
+                else
+                {
+                    return View("Authorization");
+                }
+            }
         }
         public IActionResult Test1Add(Test1 t1)
         {
