@@ -61,16 +61,18 @@
 
                 <div class="center">
                     <div>
-                        <button class="btn" onclick="Back();">Назад</button>
+
                         <button class="btn" type="submit">Отправить</button>
                     </div>
                 </div>
             </div>
         </form>
+
+        <button class="btn" onclick="Back();">Назад</button>
         <script type="text/javascript">
 
             function Back() {
-                window.close();
+                window.open('/Home/Index','_self');
             }
 
         </script>

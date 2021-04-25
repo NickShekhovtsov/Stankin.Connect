@@ -106,17 +106,14 @@ namespace Stankin.Connect.Controllers
         }
         public IActionResult Test1Add(Test1 t1)
         {
-
             Test1List.test1ar.Add(t1);
             Test1List.WriteToFile();
-            //Test1List.GenerateExcel();
             return View("Index");
         }
         public IActionResult Test2Add(Test2 t2)
         {
             Test2List.test2ar.Add(t2);
             Test2List.WriteToFile();
-            //Test2List.GenerateExcel();
             return View("Index");
         }
 
@@ -124,7 +121,6 @@ namespace Stankin.Connect.Controllers
         {
             Test3List.test3ar.Add(t3);
             Test3List.WriteToFile();
-            //Test3List.GenerateExcel();
             return View("Index");
         }
         
