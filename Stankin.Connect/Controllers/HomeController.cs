@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.IO;
 using OfficeOpenXml;
-
+using System;
 
 namespace Stankin.Connect.Controllers
 {
@@ -109,13 +109,14 @@ namespace Stankin.Connect.Controllers
 
             Test1List.test1ar.Add(t1);
             Test1List.WriteToFile();
-            Test1List.GenerateExel();
+            //Test1List.GenerateExcel();
             return View("Index");
         }
         public IActionResult Test2Add(Test2 t2)
         {
             Test2List.test2ar.Add(t2);
             Test2List.WriteToFile();
+            //Test2List.GenerateExcel();
             return View("Index");
         }
 
@@ -123,17 +124,24 @@ namespace Stankin.Connect.Controllers
         {
             Test3List.test3ar.Add(t3);
             Test3List.WriteToFile();
+            //Test3List.GenerateExcel();
             return View("Index");
         }
         
         public FileResult GetExcelFile()
         {
-            string path = "myWorkbook1.xlsx";
-            byte[] mas = System.IO.File.ReadAllBytes(path);
-            string file_type = "application/xlsx";
-            string file_name = "Report.xlsx";
 
-            return File(mas, file_type, file_name);
+            Test1List.GenerateExcel();
+            Test2List.GenerateExcel();
+            Test3List.GenerateExcel();
+                string path = "myWorkbook1.xlsx";
+                byte[] mas = System.IO.File.ReadAllBytes(path);
+                string file_type = "application/xlsx";
+                string file_name = "Report.xlsx";
+                return File(mas, file_type, file_name);
+            
+            
+            
 
           
         }

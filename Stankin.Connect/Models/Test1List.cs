@@ -31,7 +31,7 @@ namespace Stankin.Connect.Models
             }
         }
 
-        public static void GenerateExel()
+        public static void GenerateExcel()
         {
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -41,7 +41,7 @@ namespace Stankin.Connect.Models
                 ExcelWorksheet sheet;
                 if (package.Workbook.Worksheets.Count() == 0)
                 {
-                    var sheett = package.Workbook.Worksheets.Add("My Sheet");
+                    var sheett = package.Workbook.Worksheets.Add("Test1");
                     sheett.Cells["A1"].Value = "";
                     sheet = sheett;
                 }

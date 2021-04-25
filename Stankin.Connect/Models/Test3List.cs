@@ -1,9 +1,10 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
+
 
 namespace Stankin.Connect.Models
 {
@@ -30,6 +31,118 @@ namespace Stankin.Connect.Models
                 JsonSerializer.SerializeAsync<List<Test3>>(fs, test3ar);
                 Console.WriteLine("Data has been saved to file");
             }
+        }
+
+        public static void GenerateExcel()
+        {
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var file = new FileInfo("myWorkbook1.xlsx");
+            using (var package = new ExcelPackage(file))
+            {
+                ExcelWorksheet sheet;
+                if (package.Workbook.Worksheets.Count() == 0)
+                {
+                    package.Workbook.Worksheets.Add("Test1");
+                    package.Workbook.Worksheets.Add("Test2");
+                    var sheett = package.Workbook.Worksheets.Add("Test3");
+                    sheett.Cells["A1"].Value = "";
+                    sheet = sheett;
+                }
+                else
+                {
+                    if (package.Workbook.Worksheets.Count() == 1)
+                    {
+                        package.Workbook.Worksheets.Add("Test2");
+                        var sheett = package.Workbook.Worksheets.Add("Test3");
+                        sheet = sheett;
+                    }
+                    else
+                    {
+                        if (package.Workbook.Worksheets.Count() == 2)
+                        {
+                            var shett = package.Workbook.Worksheets.Add("Test3");
+                            sheet = shett;
+
+                        }
+                        else
+                        {
+                            var sheett = package.Workbook.Worksheets[2];
+                            sheet = sheett;
+                        }
+                    }
+                }
+                sheet.Column(1).Width = 30;
+                sheet.Column(8).Width = 40;
+                for (int i = 1; i < Test3List.test3ar.Count() + 1; i++)
+                {
+                    sheet.Cells[i + 1, 1].Value = "Респондент" + i;
+                }
+
+                for (int i = 1; i < 7; i++)
+                {
+                    sheet.Cells[1, i + 1].Value = "В" + i;
+                }
+
+                for (int i = 0; i < Test3List.test3ar.Count(); i++)
+                {
+
+
+                    if (Test3List.test3ar[i].radio1 == 0)
+                        sheet.Cells[i + 2, 2].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 2].Value = "Да";
+                    }
+
+                    if (Test3List.test3ar[i].radio2 == 0)
+                        sheet.Cells[i + 2, 3].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 3].Value = "Да";
+                    }
+
+                    if (Test3List.test3ar[i].radio3 == 0)
+                        sheet.Cells[i + 2, 4].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 4].Value = "Да";
+                    }
+
+                    if (Test3List.test3ar[i].radio4 == 0)
+                        sheet.Cells[i + 2, 5].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 5].Value = "Да";
+                    }
+
+                    if (Test3List.test3ar[i].radio5 == 0)
+                        sheet.Cells[i + 2, 6].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 6].Value = "Да";
+                    }
+                    if (Test3List.test3ar[i].radio6 == 0)
+                        sheet.Cells[i + 2, 7].Value = "Нет";
+                    else
+                    {
+                        sheet.Cells[i + 2, 7].Value = "Да";
+                    }
+
+
+
+                    sheet.Cells[i + 2, 8].Value = Test3List.test3ar[i].mail;
+                    sheet.Cells[1, 8].Value = "Электронная почта";
+
+
+                }
+                sheet.Cells["A1"].Value = "";
+
+
+                package.Save();
+            }
+
+
         }
     }
 }
