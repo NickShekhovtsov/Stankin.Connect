@@ -13,11 +13,11 @@
     </head>
 
     <body class="bg">
-        <form action="~/Home/Test1Add" method="post" enctype="multipart/form-data">
+        
 
 
-            <div class="main">
-
+        <div class="main">
+            <form action="~/Home/Test1Add" method="post" enctype="multipart/form-data">
                 <div>
                     1) Наличие комфортной зоны отдыха (ожидания), оборудованной соответствующей мебелью. <br><br>
                     <input type="radio" name="radio1" value="1" /> Да <br>
@@ -65,10 +65,12 @@
                         <button class="btn" type="submit">Отправить</button>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+            <div class="center"><button class="btn2" onclick="Back();">Назад</button></div>
+        </div>
+       
 
-        <button class="btn" onclick="Back();">Назад</button>
+        
         <script type="text/javascript">
 
             function Back() {

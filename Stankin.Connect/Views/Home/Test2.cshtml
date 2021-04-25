@@ -15,58 +15,62 @@
 </head>
 
 <body class="bg">
-    <form action="~/Home/Test2Add" method="post" enctype="multipart/form-data">
+    
+    <div class="main">
+        <form action="~/Home/Test2Add" method="post" enctype="multipart/form-data">
 
-        <div class="main">
             <div>
                 1) Оборудование входных групп пандусами (подъемными платформами).<br><br>
                 <input type="radio" name="radio1" value="1" /> Да <br>
                 <input type="radio" name="radio1" value="0" /> Нет <br><br><br>
 
+            </div>
+
+            <div>
+                2) Наличие выделенных стоянок для автотранспортных средств инвалидов. <br><br>
+                <input type="radio" name="radio2" value="1" /> Да <br>
+                <input type="radio" name="radio2" value="0" /> Нет <br><br><br>
+            </div>
+            <div>
+                3) Наличие адаптированных лифтов, поручней, расширенных дверных проемов. <br><br>
+                <input type="radio" name="radio3" value="1" /> Да <br>
+                <input type="radio" name="radio3" value="0" /> Нет <br><br><br>
+            </div>
+
+            <div>
+                4) Наличие сменных кресел-колясок. <br><br>
+                <input type="radio" name="radio4" value="1" /> Да <br>
+                <input type="radio" name="radio4" value="0" /> Нет <br><br><br>
+            </div>
+
+            <div>
+                5) Наличие специально оборудованных санитарно-гигиенических помещений в организации. <br><br>
+                <input type="radio" name="radio5" value="1" /> Да <br>
+                <input type="radio" name="radio5" value="0" /> Нет <br><br>
+            </div>
+
+            <div>
+                <input class="mail" placeholder="E-mail (по желанию)" type="text" name="mail" value="" />
+            </div>
+
+
+            <div class="center">
                 <div>
 
-                    2) Наличие выделенных стоянок для автотранспортных средств инвалидов. <br><br>
-                    <input type="radio" name="radio2" value="1" /> Да <br>
-                    <input type="radio" name="radio2" value="0" /> Нет <br><br><br>
-
-                    <div>
-                        3) Наличие адаптированных лифтов, поручней, расширенных дверных проемов. <br><br>
-                        <input type="radio" name="radio3" value="1" /> Да <br>
-                        <input type="radio" name="radio3" value="0" /> Нет <br><br><br>
-                    </div>
-
-                    <div>
-                        4) Наличие сменных кресел-колясок. <br><br>
-                        <input type="radio" name="radio4" value="1" /> Да <br>
-                        <input type="radio" name="radio4" value="0" /> Нет <br><br><br>
-                    </div>
-
-                    <div>
-                        5) Наличие специально оборудованных санитарно-гигиенических помещений в организации. <br><br>
-                        <input type="radio" name="radio5" value="1" /> Да <br>
-                        <input type="radio" name="radio5" value="0" /> Нет <br><br>
-                    </div>
-
-                    <div>
-                        <input class="mail" placeholder="E-mail (по желанию)" type="text" name="mail" value="" />
-                    </div>
-
-
-                    <div class="center">
-                        <div>
-                            <button class="btn" onclick="Back();">Назад</button>
-                            <button class="btn" type="submit">Отправить</button>
-                        </div>
-                    </div>
+                    <button class="btn" type="submit">Отправить</button>
                 </div>
-    </form>
-    <script type="text/javascript">
+            </div>
+        </form>
+        <div class="center"><button class="btn2" onclick="Back();">Назад</button></div>
+    </div>
+        
+        <script type="text/javascript">
 
-        function Back() {
-            window.open('/Home/Index', '_self');
-        }
+            function Back() {
+                window.open('/Home/Index', '_self');
+            }
 
-    </script>
+        </script>
 
 </body>
 </html>

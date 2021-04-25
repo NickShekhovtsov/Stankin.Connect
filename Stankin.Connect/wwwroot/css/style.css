@@ -85,6 +85,30 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	background-color: #A40004;
 }
 
+
+.btn2 {
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	line-height: 30px;
+	padding: 0 15px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #A40004;
+	top: 0;
+	position: relative;
+	color: #A40004;
+	background-color: #fff;
+	transition-duration: 0.3s;
+}
+
+.btn2:hover 
+{
+		color: #fff;
+		background-color: #A40004;
+}
+
+
 .news{
 	height: 390px;
 	margin: 0px auto;
